@@ -1,7 +1,7 @@
 {
-  "name": "knit",
+  "name": "solitaire",
   "version": "1.0.0",
-  "description": "test setup for knitting app",
+  "description": "testing out making a solitaire game",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mollyfish/test_knitter.git"
+    "url": "https://github.com/mollyfish/solitaire.git"
   },
   "author": "kent.molly@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mollyfish/test_knitter/issues"
+    "url": "https://github.com/mollyfish/solitaire/issues"
   },
-  "homepage": "https://github.com/mollyfish/test_knitter",
+  "homepage": "https://github.com/mollyfish/solitaire",
   "dependencies": {
     "express": "^4.12.3"
   }
