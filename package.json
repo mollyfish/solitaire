@@ -1,0 +1,23 @@
+{
+  "name": "knit",
+  "version": "1.0.0",
+  "description": "test setup for knitting app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mollyfish/test_knitter.git"
+  },
+  "author": "kent.molly@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mollyfish/test_knitter/issues"
+  },
+  "homepage": "https://github.com/mollyfish/test_knitter",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
