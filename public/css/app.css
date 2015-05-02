@@ -3,20 +3,39 @@ body {
   margin: 20px;
 }
 header {
-  font-size: 300%;
+  font-size: 150%;
   margin-bottom: 20px;
 }
-.card {
-  width: 8em;
-  height: 12em;
+button {
+  background-color: #efefef;
+  padding: 1em;
+  font-size: 100%;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+#draw {
+  float: right;
+}
+#home {
+  float: left;
+  margin-bottom: 20px;
+}
+#active {
+  clear: both;
+}
+#active button {
+  float: right;
+  margin-top: 8em;
+}
+.deck, .bank, .stack {
+  width: 130px;
+  height: 178px;
   background-color: #efefef;
   border-radius: 10px;
   border: .1em solid #000;
   float: left;
   margin-right: 10px;
 }
-
-
 .error-msg {
   text-align: center;
 }
