@@ -6,6 +6,13 @@ header {
   font-size: 150%;
   margin-bottom: 20px;
 }
+button {
+  background-color: #efefef;
+  padding: 1em;
+  font-size: 100%;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
 #draw {
   float: right;
 }
@@ -15,6 +22,10 @@ header {
 }
 #active {
   clear: both;
+}
+#active button {
+  float: right;
+  margin-top: 8em;
 }
 .deck, .bank, .stack {
   width: 130px;
