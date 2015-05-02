@@ -35,9 +35,11 @@ ul {
   height: 178px;
   background-color: #efefef;
   border-radius: 10px;
-  border: .1em solid #000;
   float: left;
   margin-right: 10px;
+}
+.stack {
+  background-image: url(../images/AH.png);
 }
 .error-msg {
   text-align: center;

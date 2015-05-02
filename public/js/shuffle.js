@@ -15,7 +15,7 @@ function shuffleForNewGame() {
   };
 
   var deal = [];
-  var Card = function(name, color, suit, rank, position){
+  var Card = function(name, color, suit, rank, source, position){
     this.name = name;
     this.color = color;
     this.suit = suit;
@@ -23,7 +23,7 @@ function shuffleForNewGame() {
     this.position = position; 
   }
 
-  var HA = new Card ('HA','red','hearts',1);
+  var HA = new Card ('HA','red','hearts',1,'../images/AH.png');
   var H2 = new Card ('H2','red','hearts',2);
   var H3 = new Card ('H3','red','hearts',3);
   var H4 = new Card ('H4','red','hearts',4);
