@@ -13,6 +13,9 @@ button {
   border: 1px solid #000;
   border-radius: 8px;
 }
+ul {
+  list-style: none;
+}
 #draw {
   float: right;
 }
