@@ -1,8 +1,6 @@
 'use strict';
 $(function(){
 
-
-
 function shuffleForNewGame() {
   function shuffle(deck) {
       var i = deck.length,
