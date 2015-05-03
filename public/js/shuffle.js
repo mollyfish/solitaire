@@ -83,6 +83,7 @@ function shuffleForNewGame() {
 
   function displayDeal(element, index, array) {
     array[index].position = index + 1;
+    console.log(array[index]);
     if (array[index].position === 1) {
       console.log('name: ' + array[index].name);
       array[index].faceUp = true;
@@ -167,6 +168,10 @@ function shuffleForNewGame() {
     if (array[index].position === 21) {
       console.log('name: ' + array[index].name);
       $("#six-6" ).attr("class", "face-up " + array[index].name);
+    }
+    if ((array[index].position > 21) && (array[index].position < 53)) {
+      console.log('not in stack! name: ' + array[index].name + ' position: ' + array[index].position);
+      $('#reservoir').prepend('<li class="face-down ' + array[index].name + '"></li>');
     }
   }
   newShuffle.forEach(displayDeal);

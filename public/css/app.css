@@ -23,6 +23,9 @@ li {
   height: 178px;
   position: absolute;
 }
+#reservoir li {
+  margin-top: 4px;
+}
 #draw {
   float: right;
 }
