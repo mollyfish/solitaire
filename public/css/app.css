@@ -23,6 +23,12 @@ li {
   height: 178px;
   position: absolute;
 }
+#moveit {
+  background-color: red;
+  padding: 2em;
+  width: 150px;
+  text-align: center;
+}
 #reservoir li {
   margin-top: 4px;
 }
