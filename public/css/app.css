@@ -23,6 +23,20 @@ li {
   height: 178px;
   position: absolute;
 }
+#draw {
+  float: right;
+}
+#home {
+  float: left;
+  margin-bottom: 20px;
+}
+#active {
+  clear: both;
+}
+#active button {
+  float: right;
+  margin-top: 8em;
+}
 #one-1, #two-1, #three-1, #four-1, #five-1, #six-1 {
   top: 0px;
   left: 0px;
@@ -74,22 +88,6 @@ li {
 #one-13, #two-13, #three-13, #four-13, #five-13, #six-13 {
   top: 48px;
   left: 0px;
-}
-
-
-#draw {
-  float: right;
-}
-#home {
-  float: left;
-  margin-bottom: 20px;
-}
-#active {
-  clear: both;
-}
-#active button {
-  float: right;
-  margin-top: 8em;
 }
 .deck, .bank, .stack {
   width: 130px;
@@ -260,4 +258,7 @@ li {
 }
 .face-down {
   background-image: url(../images/backside.png);
+}
+.empty {
+  display: none;
 }

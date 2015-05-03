@@ -86,91 +86,89 @@ function shuffleForNewGame() {
     if (array[index].position === 1) {
       console.log('name: ' + array[index].name);
       array[index].faceUp = true;
-      $("#one-1" ).addClass(array[index].name);
+      $("#one-1" ).attr("class", "face-up " + array[index].name);
     }
     if (array[index].position === 2) {
       console.log('name: ' + array[index].name);
-      $("#two-1" ).addClass(array[index].name);
+      $("#two-1" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 3) {
       console.log('name: ' + array[index].name);
-      $("#three-1" ).addClass(array[index].name);
+      $("#three-1" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 4) {
       console.log('name: ' + array[index].name);
-      $("#four-1" ).addClass(array[index].name);
+      $("#four-1" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 5) {
       console.log('name: ' + array[index].name);
-      $("#five-1" ).addClass(array[index].name);
+      $("#five-1" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 6) {
       console.log('name: ' + array[index].name);
-      $("#six-1" ).addClass(array[index].name);
+      $("#six-1" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 7) {
       console.log('name: ' + array[index].name);
-      $("#two-2" ).addClass(array[index].name);
+      $("#two-2" ).attr("class", "face-up " + array[index].name);
     }
     if (array[index].position === 8) {
       console.log('name: ' + array[index].name);
-      $("#three-2" ).addClass(array[index].name);
+      $("#three-2" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 9) {
       console.log('name: ' + array[index].name);
-      $("#four-2" ).addClass(array[index].name);
+      $("#four-2" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 10) {
       console.log('name: ' + array[index].name);
-      $("#five-2" ).addClass(array[index].name);
+      $("#five-2" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 11) {
       console.log('name: ' + array[index].name);
-      $("#six-2" ).addClass(array[index].name);
+      $("#six-2" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 12) {
       console.log('name: ' + array[index].name);
-      $("#three-3" ).addClass(array[index].name);
+      $("#three-3" ).attr("class", "face-up " + array[index].name);
     }
     if (array[index].position === 13) {
       console.log('name: ' + array[index].name);
-      $("#four-3" ).addClass(array[index].name);
+      $("#four-3" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 14) {
       console.log('name: ' + array[index].name);
-      $("#five-3" ).addClass(array[index].name);
+      $("#five-3" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 15) {
       console.log('name: ' + array[index].name);
-      $("#six-3" ).addClass(array[index].name);
+      $("#six-3" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 16) {
       console.log('name: ' + array[index].name);
-      $("#four-4" ).addClass(array[index].name);
+      $("#four-4" ).attr("class", "face-up " + array[index].name);
     }
     if (array[index].position === 17) {
       console.log('name: ' + array[index].name);
-      $("#five-4" ).addClass(array[index].name);
+      $("#five-4" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 18) {
       console.log('name: ' + array[index].name);
-      $("#six-4" ).addClass(array[index].name);
+      $("#six-4" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 19) {
       console.log('name: ' + array[index].name);
-      $("#five-5" ).addClass(array[index].name);
+      $("#five-5" ).attr("class", "face-up " + array[index].name);
     }
     if (array[index].position === 20) {
       console.log('name: ' + array[index].name);
-      $("#six-5" ).addClass(array[index].name);
+      $("#six-5" ).attr("class", "face-down " + array[index].name);
     }
     if (array[index].position === 21) {
       console.log('name: ' + array[index].name);
-      $("#six-6" ).addClass(array[index].name);
+      $("#six-6" ).attr("class", "face-up " + array[index].name);
     }
-
   }
-
   newShuffle.forEach(displayDeal);
 };
 
