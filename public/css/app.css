@@ -23,7 +23,7 @@ li {
   height: 178px;
   position: absolute;
 }
-.red, .black {
+.ui-draggable-dragging {
   z-index: 100;
 }
 #moveit1 {

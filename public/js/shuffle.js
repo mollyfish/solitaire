@@ -89,29 +89,34 @@ function shuffleForNewGame() {
       console.log('name: ' + array[index].name);
       array[index].faceUp = true;
       $("#one-1").attr({
-        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+        "class": "face-up " + array[index].name + ' ' + array[index].color + array[index].rank,
       }).draggable({revert:true});
+
       if (array[index].color === 'red') {
         $("#one-1").droppable({
-          accept: ".black" && "." + (array[index].rank - 1),
+          // accept: ".black" && "." + (array[index].rank - 1),
+          accept: ".black" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable(disable);
           }
         });
       }
       if (array[index].color === 'black') {
         $("#one-1").droppable({
-          accept: ".red" && "." + (array[index].rank - 1),
+          // accept: ".red" && "." + (array[index].rank - 1),
+          accept: ".red" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
@@ -149,29 +154,33 @@ function shuffleForNewGame() {
     if (array[index].position === 7) {
       console.log('name: ' + array[index].name);
       $("#two-2").attr({
-        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+        "class": "face-up " + array[index].name + ' ' + array[index].color + array[index].rank,
       }).draggable({revert:true});
       if (array[index].color === 'red') {
         $("#two-2").droppable({
-          accept: ".black" && "." + (array[index].rank - 1),
+          // accept: ".black" && "." + (array[index].rank - 1),
+          accept: ".black" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
       if (array[index].color === 'black') {
         $("#two-2").droppable({
-          accept: ".red" && "." + (array[index].rank - 1),
+          // accept: ".red" && "." + (array[index].rank - 1),
+          accept: ".red" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
@@ -203,29 +212,33 @@ function shuffleForNewGame() {
     if (array[index].position === 12) {
       console.log('name: ' + array[index].name);
       $("#three-3").attr({
-        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+        "class": "face-up " + array[index].name + ' ' + array[index].color + array[index].rank,
       }).draggable({revert:true});
       if (array[index].color === 'red') {
         $("#three-3").droppable({
-          accept: ".black" && "." + (array[index].rank - 1),
+          // accept: ".black" && "." + (array[index].rank - 1),
+          accept: ".black" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
       if (array[index].color === 'black') {
         $("#three-3").droppable({
-          accept: ".red" && "." + (array[index].rank - 1),
+          // accept: ".red" && "." + (array[index].rank - 1),
+          accept: ".red" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
@@ -251,29 +264,33 @@ function shuffleForNewGame() {
     if (array[index].position === 16) {
       console.log('name: ' + array[index].name);
       $("#four-4").attr({
-        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+        "class": "face-up " + array[index].name + ' ' + array[index].color + array[index].rank,
       }).draggable({revert:true});
       if (array[index].color === 'red') {
         $("#four-4").droppable({
-          accept: ".black" && "." + (array[index].rank - 1),
+          // accept: ".black" && "." + (array[index].rank - 1),
+          accept: ".black" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
       if (array[index].color === 'black') {
         $("#four-4").droppable({
-          accept: ".red" && "." + (array[index].rank - 1),
+          // accept: ".red" && "." + (array[index].rank - 1),
+          accept: ".red" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
@@ -293,29 +310,33 @@ function shuffleForNewGame() {
     if (array[index].position === 19) {
       console.log('name: ' + array[index].name);
       $("#five-5").attr({
-        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+        "class": "face-up " + array[index].name + ' ' + array[index].color + array[index].rank,
       }).draggable({revert:true});
       if (array[index].color === 'red') {
         $("#five-5").droppable({
-          accept: ".black" && "." + (array[index].rank - 1),
+          // accept: ".black" && "." + (array[index].rank - 1),
+          accept: ".black" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
       if (array[index].color === 'black') {
         $("#five-5").droppable({
-          accept: ".red" && "." + (array[index].rank - 1),
+          // accept: ".red" && "." + (array[index].rank - 1),
+          accept: ".red" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
@@ -329,29 +350,33 @@ function shuffleForNewGame() {
     if (array[index].position === 21) {
       console.log('name: ' + array[index].name);
       $("#six-6").attr({
-        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+        "class": "face-up " + array[index].name + ' ' + array[index].color + array[index].rank,
       }).draggable({revert:true});
       if (array[index].color === 'red') {
         $("#six-6").droppable({
-          accept: ".black" && "." + (array[index].rank - 1),
+          // accept: ".black" && "." + (array[index].rank - 1),
+          accept: ".black" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
       if (array[index].color === 'black') {
         $("#six-6").droppable({
-          accept: ".red" && "." + (array[index].rank - 1),
+          // accept: ".red" && "." + (array[index].rank - 1),
+          accept: ".red" + (array[index].rank - 1),
           tolerance: "intersect",
           drop: function(ev, ui) {
             console.log('dropped');
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+            // $(droppedOn).droppable("disable");
           }
         });
       }
