@@ -1,5 +1,90 @@
 'use strict';
 $(function(){
+
+function makeDraggable(){
+  $('.HA').draggable({revert: true});
+  $('.H2').draggable({revert: true});
+  $('.H3').draggable({revert: true});
+  $('.H4').draggable({revert: true});
+  $('.H5').draggable({revert: true});
+  $('.H6').draggable({revert: true});
+  $('.H7').draggable({revert: true});
+  $('.H8').draggable({revert: true});
+  $('.H9').draggable({revert: true});
+  $('.H1').draggable({revert: true});
+  $('.HJ').draggable({revert: true});
+  $('.HQ').draggable({revert: true});
+  $('.HK').draggable({revert: true});
+  $('.DA').draggable({revert: true});
+  $('.D2').draggable({revert: true});
+  $('.D3').draggable({revert: true});
+  $('.D4').draggable({revert: true});
+  $('.D5').draggable({revert: true});
+  $('.D6').draggable({revert: true});
+  $('.D7').draggable({revert: true});
+  $('.D8').draggable({revert: true});
+  $('.D9').draggable({revert: true});
+  $('.D1').draggable({revert: true});
+  $('.DJ').draggable({revert: true});
+  $('.DQ').draggable({revert: true});
+  $('.DK').draggable({revert: true});
+  $('.CA').draggable({revert: true});
+  $('.C2').draggable({revert: true});
+  $('.C3').draggable({revert: true});
+  $('.C4').draggable({revert: true});
+  $('.C5').draggable({revert: true});
+  $('.C6').draggable({revert: true});
+  $('.C7').draggable({revert: true});
+  $('.C8').draggable({revert: true});
+  $('.C9').draggable({revert: true});
+  $('.C1').draggable({revert: true});
+  $('.CJ').draggable({revert: true});
+  $('.CQ').draggable({revert: true});
+  $('.CK').draggable({revert: true});
+  $('.SA').draggable({revert: true});
+  $('.S2').draggable({revert: true});
+  $('.S3').draggable({revert: true});
+  $('.S4').draggable({revert: true});
+  $('.S5').draggable({revert: true});
+  $('.S6').draggable({revert: true});
+  $('.S7').draggable({revert: true});
+  $('.S8').draggable({revert: true});
+  $('.S9').draggable({revert: true});
+  $('.S1').draggable({revert: true});
+  $('.SJ').draggable({revert: true});
+  $('.SQ').draggable({revert: true});
+  $('.SK').draggable({revert: true});
+  $('#moveit1').draggable({revert:true});
+  $('#moveit2').draggable({revert:true});
+  $('.red').droppable({
+    accept: ".black",
+    tolerance: "intersect",
+    drop: function(ev, ui) {
+      console.log('dropped');
+      var dropped = ui.draggable;
+      var droppedOn = $(this);
+      $(dropped).detach();
+      $(dropped).css({top: 30,left: 0});
+      $(dropped).append(dropped);
+    }
+  });
+  $('.black').droppable({
+    accept: ".red",
+    tolerance: "intersect",
+    drop: function(ev, ui) {
+      console.log('dropped');
+      var dropped = ui.draggable;
+      var droppedOn = $(this);
+      $(dropped).detach().css({top: 30,left: 0}).append(dropped);
+    }
+  });
+
+  function cardSnap(droppedOn, droppedElement) {
+    $('#dropzone1').html('<div id="moveit1" class="red">' + $('#moveit1').html() + '</div>' );
+    $('#moveit1').remove();
+  }
+};
+
 function shuffleForNewGame() {
   function shuffle(deck) {
       var i = deck.length,
@@ -14,7 +99,6 @@ function shuffleForNewGame() {
       return deck;
   };
 
-  var deal = [];
   var Card = function(name, color, suit, rank, url, faceUp, position){
     this.name = name;
     this.color = color;
@@ -77,160 +161,209 @@ function shuffleForNewGame() {
   var SJ = new Card ('SJ','black','spades',11,'../public/images/SJ.png');
   var SQ = new Card ('SQ','black','spades',12,'../public/images/SQ.png');
   var SK = new Card ('SK','black','spades',13,'../public/images/SK.png');
-  var back = new Card ('back','none','none',0,'../imagespublic//backside.png');
+  var back = new Card ('back','none','none',0,'../public/images/backside.png');
 
   var newShuffle = shuffle([HA,H2,H3,H4,H5,H6,H7,H8,H9,H1,HJ,HQ,HK,DA,D2,D3,D4,D5,D6,D7,D8,D9,D1,DJ,DQ,DK,CA,C2,C3,C4,C5,C6,C7,C8,C9,C1,CJ,CQ,CK,SA,S2,S3,S4,S5,S6,S7,S8,S9,S1,SJ,SQ,SK]);
 
   function displayDeal(element, index, array) {
     array[index].position = index + 1;
-    console.log(array[index]);
     if (array[index].position === 1) {
       console.log('name: ' + array[index].name);
       array[index].faceUp = true;
-      $("#one-1" ).attr({
-        "class": "face-up " + array[index].name,
-        "position": "relative"
-      });
-      $('#' + array[index].name).draggable({revert: true});
+      $("#one-1").attr({
+        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+      }).draggable({revert:true});
+      if (array[index].color === 'red') {
+        $("#one-1").droppable({
+          accept: ".black" && "." + (array[index].rank - 1),
+          tolerance: "intersect",
+          drop: function(ev, ui) {
+            console.log('dropped');
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+          }
+        });
+      }
+      if (array[index].color === 'black') {
+        $("#one-1").droppable({
+          accept: ".red" && "." + (array[index].rank - 1),
+          tolerance: "intersect",
+          drop: function(ev, ui) {
+            console.log('dropped');
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+          }
+        });
+      }
     }
     if (array[index].position === 2) {
       console.log('name: ' + array[index].name);
       $("#two-1" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 3) {
       console.log('name: ' + array[index].name);
       $("#three-1" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 4) {
       console.log('name: ' + array[index].name);
       $("#four-1" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 5) {
       console.log('name: ' + array[index].name);
       $("#five-1" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 6) {
       console.log('name: ' + array[index].name);
       $("#six-1" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 7) {
       console.log('name: ' + array[index].name);
-      $("#two-2" ).attr({
-        "class": "face-up " + array[index].name,
-        "position": "relative"
-      });
+      $("#two-2").attr({
+        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+      }).draggable({revert:true});
+      if (array[index].color === 'red') {
+        $("#two-2").droppable({
+          accept: ".black",
+          tolerance: "intersect",
+          drop: function(ev, ui) {
+            console.log('dropped');
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+          }
+        });
+      }
+      if (array[index].color === 'black') {
+        $("#two-2").droppable({
+          accept: ".red",
+          tolerance: "intersect",
+          drop: function(ev, ui) {
+            console.log('dropped');
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+          }
+        });
+      }
     }
     if (array[index].position === 8) {
       console.log('name: ' + array[index].name);
       $("#three-2" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 9) {
       console.log('name: ' + array[index].name);
       $("#four-2" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 10) {
       console.log('name: ' + array[index].name);
       $("#five-2" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 11) {
       console.log('name: ' + array[index].name);
       $("#six-2" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 12) {
       console.log('name: ' + array[index].name);
-      $("#three-3" ).attr({
-        "class": "face-up " + array[index].name,
-        "position": "relative"
-      });
+      $("#three-3").attr({
+        "class": "face-up " + array[index].name + ' ' + array[index].color + ' ' + array[index].rank,
+      }).draggable({revert:true});
+      if (array[index].color === 'red') {
+        $("#three-3").droppable({
+          accept: ".black",
+          tolerance: "intersect",
+          drop: function(ev, ui) {
+            console.log('dropped');
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+          }
+        });
+      }
+      if (array[index].color === 'black') {
+        $("#three-3").droppable({
+          accept: ".red",
+          tolerance: "intersect",
+          drop: function(ev, ui) {
+            console.log('dropped');
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 30,left: 0}).insertAfter(droppedOn);
+          }
+        });
+      }
     }
     if (array[index].position === 13) {
       console.log('name: ' + array[index].name);
       $("#four-3" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 14) {
       console.log('name: ' + array[index].name);
       $("#five-3" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 15) {
       console.log('name: ' + array[index].name);
       $("#six-3" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 16) {
       console.log('name: ' + array[index].name);
       $("#four-4" ).attr({
         "class": "face-up " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 17) {
       console.log('name: ' + array[index].name);
       $("#five-4" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 18) {
       console.log('name: ' + array[index].name);
       $("#six-4" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 19) {
       console.log('name: ' + array[index].name);
       $("#five-5" ).attr({
         "class": "face-up " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 20) {
       console.log('name: ' + array[index].name);
       $("#six-5" ).attr({
         "class": "face-down " + array[index].name,
-        "position": "relative"
       });
     }
     if (array[index].position === 21) {
       console.log('name: ' + array[index].name);
       $("#six-6" ).attr({
         "class": "face-up " + array[index].name,
-        "position": "relative"
       });
     }
     if ((array[index].position > 21) && (array[index].position < 53)) {
@@ -241,13 +374,6 @@ function shuffleForNewGame() {
   newShuffle.forEach(displayDeal);
 };
 
-
-
-
-
-
-
-var $newGame = $('#new-game')[0];
 $("#new-game").click(function() {
   shuffleForNewGame();
 });
